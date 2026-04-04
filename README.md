@@ -1,4 +1,4 @@
-# Klant Template
+# Website Template
 
 Een Next.js website template met Payload CMS, gebouwd op een block-based component architectuur.
 
