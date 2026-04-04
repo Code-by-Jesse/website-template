@@ -1,0 +1,59 @@
+@use '../../styles/breakpoints' as *;
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 2em;
+  overflow: hidden;
+  min-height: 60vh;
+
+  &[data-theme='dark'] {
+    color: white;
+  }
+
+  &[data-theme='light'] {
+    color: var(--color-text);
+  }
+}
+
+.fullHeight {
+  min-height: 100svh;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 60em;
+}
+
+.heading {
+  font-size: var(--font-h1);
+  line-height: 1.05;
+  font-weight: 400;
+  overflow: hidden;
+
+  @include tablet {
+    font-size: 3em;
+  }
+
+  @include mobile {
+    font-size: 2.25em;
+  }
+}
+
+.subheading {
+  margin-top: 0.75em;
+  font-size: var(--font-h5);
+  opacity: 0.8;
+  line-height: 1.4;
+}

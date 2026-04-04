@@ -1,0 +1,43 @@
+.section {
+  padding: var(--space-section) 2em;
+
+  &[data-align='center'] {
+    text-align: center;
+  }
+}
+
+.container {
+  margin: 0 auto;
+
+  .section[data-width='narrow'] & {
+    max-width: 40em;
+  }
+
+  .section[data-width='medium'] & {
+    max-width: 55em;
+  }
+
+  .section[data-width='wide'] & {
+    max-width: 75em;
+  }
+}
+
+.heading {
+  font-size: var(--font-h2);
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+.content {
+  font-size: var(--font-body);
+  line-height: 1.6;
+
+  p + p {
+    margin-top: 1em;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}

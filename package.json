@@ -1,0 +1,38 @@
+{
+  "name": "klant-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "payload": "payload",
+    "generate:types": "payload generate:types"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@payloadcms/db-sqlite": "3.81.0",
+    "@payloadcms/live-preview-react": "^3.81.0",
+    "@payloadcms/next": "3.81.0",
+    "@payloadcms/plugin-seo": "3.81.0",
+    "@payloadcms/richtext-lexical": "3.81.0",
+    "graphql": "^16.8.1",
+    "gsap": "^3.12.7",
+    "lenis": "^1.2.3",
+    "next": "15.4.11",
+    "payload": "3.81.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.24.0",
+    "eslint-config-next": "^15.3.0",
+    "sass": "^1.86.0",
+    "typescript": "^5.8.0"
+  }
+}

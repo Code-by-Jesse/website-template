@@ -1,0 +1,66 @@
+@use '../../styles/breakpoints' as *;
+
+.section {
+  padding: var(--space-section) 2em;
+  max-width: 90em;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: var(--font-h2);
+  line-height: 1.1;
+  margin-bottom: 1.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.imageWrap {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 4 / 3;
+  margin-bottom: 0.75em;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-osmo);
+}
+
+@include hover {
+  .card:hover .image {
+    transform: scale(1.05);
+  }
+}
+
+.title {
+  font-size: var(--font-h5);
+  line-height: 1.2;
+}
+
+.description {
+  margin-top: 0.25em;
+  font-size: var(--font-small);
+  opacity: 0.6;
+  line-height: 1.4;
+}

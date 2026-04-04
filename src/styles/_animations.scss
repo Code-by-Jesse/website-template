@@ -1,0 +1,66 @@
+@use 'breakpoints' as *;
+
+// =========================================
+// BUTTON CHARACTER ANIMATION
+// =========================================
+
+.btn-animate-chars [data-button-animate-chars] {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-animate-chars [data-button-animate-chars] span {
+  display: inline-block;
+  position: relative;
+  text-shadow: 0px 1.3em currentColor;
+  transform: translateY(0em) rotate(0.001deg);
+  transition: transform var(--duration-default) var(--ease-osmo);
+}
+
+.btn-animate__bg {
+  transition: width 0.5s var(--ease-osmo);
+  width: 0%;
+}
+
+.btn-animate-chars__bg {
+  inset: 0;
+  transition: inset var(--duration-default) var(--ease-osmo);
+}
+
+@include hover {
+  .btn-animate-chars:hover [data-button-animate-chars] span {
+    transform: translateY(-1.3em) rotate(0.001deg);
+  }
+
+  .btn-animate-chars:hover .btn-animate__bg {
+    width: 100%;
+  }
+
+  .btn-animate-chars:hover .btn-animate-chars__bg {
+    inset: 0.125em;
+  }
+}
+
+// =========================================
+// TEXT HIGHLIGHT
+// =========================================
+
+.u-text__highlight {
+  font-family: var(--font-secondary);
+  font-style: italic;
+}
+
+// =========================================
+// REDUCED MOTION
+// =========================================
+
+@include reduced-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

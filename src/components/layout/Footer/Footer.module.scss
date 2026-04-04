@@ -1,0 +1,54 @@
+@use '../../../styles/breakpoints' as *;
+
+.footer {
+  padding: var(--space-lg) 2em var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 80em;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-lg);
+
+  @include mobile-landscape {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+.logo {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2em;
+
+  @include mobile-landscape {
+    flex-direction: column;
+    gap: 0.75em;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-small);
+  opacity: 0.6;
+
+  @include mobile-landscape {
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+  }
+}

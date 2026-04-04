@@ -1,0 +1,46 @@
+@use '../../styles/breakpoints' as *;
+
+.section {
+  padding: var(--space-xl) 2em;
+  max-width: 80em;
+  margin: 0 auto;
+
+  &[data-align='center'] {
+    text-align: center;
+  }
+}
+
+.text {
+  line-height: 1.2;
+  font-weight: 400;
+
+  .section[data-size='medium'] & {
+    font-size: var(--font-h3);
+  }
+
+  .section[data-size='large'] & {
+    font-size: var(--font-h2);
+  }
+
+  .section[data-size='xlarge'] & {
+    font-size: var(--font-h1);
+  }
+
+  @include tablet {
+    .section[data-size='xlarge'] & {
+      font-size: var(--font-h2);
+    }
+  }
+
+  @include mobile {
+    .section[data-size='large'] &,
+    .section[data-size='xlarge'] & {
+      font-size: var(--font-h3);
+    }
+  }
+}
+
+.word {
+  display: inline;
+  transition: opacity 0.1s ease;
+}

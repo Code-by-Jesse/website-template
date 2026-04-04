@@ -1,0 +1,77 @@
+@use '../../styles/breakpoints' as *;
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: var(--space-section) 2em;
+  max-width: 90em;
+  margin: 0 auto;
+
+  &[data-vertical-align='start'] { align-items: start; }
+  &[data-vertical-align='center'] { align-items: center; }
+  &[data-vertical-align='end'] { align-items: end; }
+
+  &[data-media-position='left'] {
+    .mediaCol { order: -1; }
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+
+    &[data-media-position='left'] {
+      .mediaCol { order: -1; }
+    }
+  }
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+.subheading {
+  display: block;
+  font-size: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 1em;
+}
+
+.heading {
+  font-size: var(--font-h2);
+  line-height: 1.1;
+}
+
+.content {
+  margin-top: 1em;
+  font-size: var(--font-body);
+  line-height: 1.6;
+  opacity: 0.8;
+
+  p + p {
+    margin-top: 0.75em;
+  }
+}
+
+.mediaCol {
+  position: relative;
+}
+
+.mediaWrap {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+
+  &[data-ratio='portrait'] { aspect-ratio: 3 / 4; }
+  &[data-ratio='landscape'] { aspect-ratio: 4 / 3; }
+  &[data-ratio='square'] { aspect-ratio: 1 / 1; }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

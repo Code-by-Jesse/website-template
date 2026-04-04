@@ -1,0 +1,22 @@
+// Hide Payload's default nav groups and items — we use CustomNav instead
+[class*="nav__"] > [class*="nav-group"] {
+  display: none;
+}
+
+// Smooth sidebar open/close transition
+[class*="template-default__"] {
+  transition: grid-template-columns 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[class*="nav__wrap"] {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease,
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden;
+}
+
+// Content area smooth resize
+[class*="template-default__content"] {
+  transition: margin 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}

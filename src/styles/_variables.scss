@@ -1,0 +1,89 @@
+// =========================================
+// FLUID TYPOGRAPHY & SCALING
+// =========================================
+
+// Desktop
+:root {
+  --size-unit: 16;
+  --size-container-ideal: 1440;
+  --size-container-min: 992px;
+  --size-container-max: 2560px;
+  --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
+  --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
+}
+
+// Tablet
+@media screen and (max-width: 991px) {
+  :root {
+    --size-container-ideal: 834;
+    --size-container-min: 768px;
+    --size-container-max: 991px;
+  }
+}
+
+// Mobile Landscape
+@media screen and (max-width: 767px) {
+  :root {
+    --size-container-ideal: 390;
+    --size-container-min: 480px;
+    --size-container-max: 767px;
+  }
+}
+
+// Mobile Portrait
+@media screen and (max-width: 479px) {
+  :root {
+    --size-container-ideal: 390;
+    --size-container-min: 320px;
+    --size-container-max: 479px;
+  }
+}
+
+// =========================================
+// PROJECT VARIABELEN (pas aan per klant)
+// =========================================
+
+:root {
+  // Kleuren (dark mode standaard)
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-accent: #4a6cf7;
+  --color-text: #ffffff;
+  --color-text-light: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(255, 255, 255, 0.15);
+  --color-background: #0a0a0a;
+
+  // Fonts (pas aan per project)
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Georgia', serif;
+
+  // Font sizes (in em, schaalt mee met fluid system)
+  --font-h1: 4em;
+  --font-h2: 3em;
+  --font-h3: 2.25em;
+  --font-h4: 1.5em;
+  --font-h5: 1.25em;
+  --font-body: 1em;
+  --font-small: 0.875em;
+  --font-label: 0.75em;
+
+  // Spacing (in em)
+  --space-xs: 0.5em;
+  --space-sm: 1em;
+  --space-md: 2em;
+  --space-lg: 4em;
+  --space-xl: 8em;
+  --space-section: 6em;
+
+  // Transitions
+  --ease-osmo: cubic-bezier(0.625, 0.05, 0, 1);
+  --duration-default: 0.6s;
+  --duration-fast: 0.3s;
+  --duration-slow: 1.2s;
+
+  // Border radius
+  --radius-sm: 0.25em;
+  --radius-md: 0.5em;
+  --radius-lg: 1em;
+  --radius-pill: 5em;
+}

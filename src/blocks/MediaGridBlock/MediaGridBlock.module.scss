@@ -1,0 +1,50 @@
+@use '../../styles/breakpoints' as *;
+
+.section {
+  padding: var(--space-section) 2em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+
+  @include mobile-landscape {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+
+  // Eerste item en elk 3e item daarna: full width
+  &:first-child,
+  &:nth-child(3n + 1) {
+    grid-column: span 2;
+
+    @include mobile-landscape {
+      grid-column: span 1;
+    }
+  }
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  .item[data-ratio='wide'] & {
+    aspect-ratio: 16 / 9;
+  }
+
+  .item[data-ratio='square'] & {
+    aspect-ratio: 1 / 1;
+  }
+
+  .item[data-ratio='portrait'] & {
+    aspect-ratio: 2 / 3;
+  }
+}
