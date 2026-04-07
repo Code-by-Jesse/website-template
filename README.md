@@ -18,7 +18,15 @@ Een Next.js website template met Payload CMS, gebouwd op een block-based compone
 npm install
 ```
 
-### 2. Maak een `.env` bestand
+### 2. Maak de `data/` map aan
+
+Deze map wordt gebruikt voor de lokale SQLite database en staat in `.gitignore`:
+
+```bash
+mkdir data
+```
+
+### 3. Maak een `.env` bestand
 
 Kopieer het voorbeeldbestand:
 
@@ -34,7 +42,7 @@ Dit bevat de volgende variabelen:
 | `PAYLOAD_SECRET`       | `dev-secret-change-in-production` | Secret voor encryptie in Payload |
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000`      | Publieke URL van de site              |
 
-### 3. Start de dev server
+### 4. Start de dev server
 
 ```bash
 npm run dev
